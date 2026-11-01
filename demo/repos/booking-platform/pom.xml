@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.archgraph</groupId>
+  <artifactId>booking-platform</artifactId>
+  <version>1.4.0</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>booking-gateway</module>
+    <module>user-service</module>
+    <module>reservation-service</module>
+  </modules>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.2.5</version>
+  </parent>
+  <dependencies>
+    <dependency>
+      <groupId>com.archgraph</groupId>
+      <artifactId>shared-library</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+  </dependencies>
+</project>

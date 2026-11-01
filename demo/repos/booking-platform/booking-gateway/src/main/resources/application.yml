@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: booking-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: reservation-route
+          uri: lb://reservation-service
+          predicates:
+            - Path=/api/reservations/**
+        - id: payment-route
+          uri: lb://payment-service
+          predicates:
+            - Path=/api/payments/**
+        - id: user-route
+          uri: lb://user-service
+          predicates:
+            - Path=/api/users/**
+server:
+  port: 8080

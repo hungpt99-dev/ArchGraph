@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: reservation-service
+  datasource:
+    url: jdbc:postgresql://postgres:5432/booking
+    username: booking
+    password: ${DB_PASSWORD}
+  kafka:
+    bootstrap-servers: kafka:9092
+  data:
+    redis:
+      host: redis
+      port: 6379
+services:
+  payment:
+    url: http://payment-service:8082
+server:
+  port: 8083

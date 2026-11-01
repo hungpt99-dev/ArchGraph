@@ -21,3 +21,7 @@ artifacts/evidence/playwright-report/
 *.log
 .DS_Store
 backend/.mypy_cache/
+
+# demo repos are initialised at seed time
+.e2e-repos/
+demo/repos/*/.git/

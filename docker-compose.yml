@@ -99,7 +99,7 @@ services:
 
   seed:
     build: ./backend
-    command: ["python", "-m", "app.seed_demo"]
+    command: ["sh", "-c", "sh /demo/init_repos.sh && python -m app.seed_demo"]
     environment:
       <<: *backend-env
       DEMO_REPO_ROOT: /demo/repos
@@ -107,7 +107,7 @@ services:
       DEMO_ADMIN_PASSWORD: ${DEMO_ADMIN_PASSWORD:-archgraph-demo-2026}
     volumes:
       - repo-data:/data/repos
-      - ./demo/repos:/demo/repos:ro
+      - ./demo:/demo
     depends_on:
       migrate:
         condition: service_completed_successfully

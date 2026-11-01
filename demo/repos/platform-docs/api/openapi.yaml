@@ -1,0 +1,30 @@
+openapi: 3.0.3
+info:
+  title: Hotel Platform Public API
+  version: 1.3.0
+paths:
+  /api/reservations:
+    post:
+      summary: Create a reservation
+      responses:
+        "201": { description: Created }
+  /api/reservations/{id}:
+    get:
+      summary: Get a reservation
+      responses:
+        "200": { description: OK }
+  /api/payments/authorize:
+    post:
+      summary: Authorise a payment
+      responses:
+        "200": { description: OK }
+  /api/invoices/{id}:
+    get:
+      summary: Fetch an invoice
+      responses:
+        "200": { description: OK }
+  /api/users/{id}:
+    get:
+      summary: Fetch a guest profile
+      responses:
+        "200": { description: OK }

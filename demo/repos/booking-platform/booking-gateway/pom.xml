@@ -1,0 +1,8 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+  <parent><groupId>com.archgraph</groupId><artifactId>booking-platform</artifactId><version>1.4.0</version></parent>
+  <artifactId>booking-gateway</artifactId>
+  <dependencies>
+    <dependency><groupId>org.springframework.cloud</groupId><artifactId>spring-cloud-starter-gateway</artifactId></dependency>
+  </dependencies>
+</project>

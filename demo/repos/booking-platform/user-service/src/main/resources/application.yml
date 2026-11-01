@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:postgresql://postgres:5432/booking
+    username: booking
+    password: ${DB_PASSWORD}
+server:
+  port: 8081

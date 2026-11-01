@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: invoice-service
+  datasource:
+    url: jdbc:postgresql://postgres:5432/invoices
+    username: invoices
+    password: ${DB_PASSWORD}
+  kafka:
+    bootstrap-servers: kafka:9092
+server:
+  port: 8084
