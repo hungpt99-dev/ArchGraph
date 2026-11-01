@@ -150,7 +150,9 @@ scheduled jobs, ADRs, an OpenAPI spec and Jira-shaped requirement fixtures.
 cd backend && python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 export DATABASE_URL=postgresql+psycopg://archgraph:archgraph@localhost:5432/archgraph
-python -m app.migrate && python -m app.seed_demo
+python -m app.migrate
+sh ../demo/init_repos.sh ../demo/repos   # create demo git history
+DEMO_REPO_ROOT=../demo/repos python -m app.seed_demo
 uvicorn app.main:app --reload --port 8000
 python -m app.worker            # second terminal
 

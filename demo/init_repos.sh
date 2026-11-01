@@ -7,7 +7,7 @@
 # commit if it does not already have one.
 set -eu
 
-ROOT="${DEMO_REPO_ROOT:-/demo/repos}"
+ROOT="${1:-${DEMO_REPO_ROOT:-/demo/repos}}"
 
 for dir in "$ROOT"/*/; do
   [ -d "$dir" ] || continue

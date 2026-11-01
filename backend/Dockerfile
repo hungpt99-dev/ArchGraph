@@ -17,8 +17,8 @@ COPY migrations ./migrations
 
 RUN git config --system --add safe.directory '*' \
     && useradd --create-home --uid 10001 archgraph \
-    && mkdir -p /data/repos /data/workspaces \
-    && chown -R archgraph:archgraph /data /app
+    && mkdir -p /data/repos /data/workspaces /demo-src \
+    && chown -R archgraph:archgraph /data /demo-src /app
 USER archgraph
 
 EXPOSE 8000

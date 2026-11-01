@@ -99,15 +99,16 @@ services:
 
   seed:
     build: ./backend
-    command: ["sh", "-c", "sh /demo/init_repos.sh && python -m app.seed_demo"]
+    command: ["sh", "-c", "mkdir -p /demo-src/repos && cp -a /demo/repos/. /demo-src/repos/ && sh /demo/init_repos.sh /demo-src/repos && python -m app.seed_demo"]
     environment:
       <<: *backend-env
-      DEMO_REPO_ROOT: /demo/repos
+      DEMO_REPO_ROOT: /demo-src/repos
       DEMO_ADMIN_EMAIL: ${DEMO_ADMIN_EMAIL:-admin@archgraph.io}
       DEMO_ADMIN_PASSWORD: ${DEMO_ADMIN_PASSWORD:-archgraph-demo-2026}
     volumes:
       - repo-data:/data/repos
-      - ./demo:/demo
+      - demo-data:/demo-src
+      - ./demo:/demo:ro
     depends_on:
       migrate:
         condition: service_completed_successfully
@@ -117,3 +118,4 @@ services:
 volumes:
   pgdata:
   repo-data:
+  demo-data:
