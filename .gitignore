@@ -1,0 +1,23 @@
+# --- python ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.coverage
+coverage.json
+htmlcov/
+*.egg-info/
+
+# --- node ----------------------------------------------------------------
+node_modules/
+dist/
+frontend/test-results/
+frontend/playwright-report/
+artifacts/evidence/playwright-report/
+
+# --- runtime / local -----------------------------------------------------
+.env
+.data/
+*.log
+.DS_Store
+backend/.mypy_cache/

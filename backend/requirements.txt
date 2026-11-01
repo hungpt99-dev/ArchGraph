@@ -1,0 +1,17 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+sqlalchemy==2.0.36
+psycopg[binary]==3.2.3
+pydantic==2.11.7
+pydantic-settings==2.10.1
+email-validator==2.2.0
+python-jose[cryptography]==3.3.0
+cryptography==44.0.0
+httpx==0.28.1
+PyYAML==6.0.2
+python-multipart==0.0.20
+mcp==1.20.0
+pypdf==5.1.0
+python-docx==1.1.2
+pytest==8.3.4
+pytest-cov==6.0.0
