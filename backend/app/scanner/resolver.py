@@ -230,11 +230,11 @@ class WorkspaceResolver:
                     if ep is None:
                         ep = Node(
                             id=new_id(), workspace_id=self.workspace_id,
-                            repository_id=repo.id, natural_key=ep_key,
+                            repository_id=None, natural_key=ep_key,
                             type="API_ENDPOINT", name=f"GET {path}",
                             qualified_name=f"gateway {path}",
                             properties={"http_method": "GET", "path": path, "gateway": True,
-                                        "target_service": target.name},
+                                        "resolver_owned": True, "target_service": target.name},
                             detection_method="CONFIGURED_CONNECTION", confidence=0.9,
                             evidence={"repository_id": repo.id, "file": "gateway configuration"},
                         )

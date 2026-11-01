@@ -44,7 +44,7 @@ Security model: `docs/SECURITY.md`. Operations: `docs/OPERATIONS.md`.
 
 | Suite | Command | Actual result |
 | --- | --- | --- |
-| Backend | `cd backend && ../.venv/bin/python -m pytest -q` | **59 passed**, 0 failed, 337.02 s, 64% coverage |
+| Backend | `cd backend && ../.venv/bin/python -m pytest -q` | **59 passed**, 0 failed, 287.99 s, 64% coverage |
 | E2E | `cd frontend && npx playwright test tests/e2e.spec.ts` | **15 passed**, 0 failed, 1.9 min |
 | Evidence | `npx playwright test tests/screenshots.spec.ts` | **12 passed**, 0 failed, 34 screenshots |
 | MCP stdio | `pytest tests/test_mcp.py` | **4 passed** (real MCP client) |

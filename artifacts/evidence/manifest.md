@@ -10,7 +10,7 @@ Environment at capture time:
 * PostgreSQL 16-alpine, worker container running the real job loop
 * Demo: 6 repositories → 8 services, 28 endpoints, 6 Kafka topics, 6 tables,
   5 databases, 3 caches, 2 scheduled jobs, 10 documents, 93 document↔code links
-* Graph: **266 nodes / 397 edges / 98 unresolved references** (17 node types)
+* Graph: **266 nodes / 402 edges / 98 unresolved references** (17 node types)
 
 Legend: **Complete** = implementation + automated test + captured evidence.
 **Complete (mock provider)** = workflow proven with the labelled offline mock
@@ -43,7 +43,7 @@ exists but could not be exercised without external credentials.
 
 | Suite | Command | Result |
 | --- | --- | --- |
-| Backend unit + integration | `cd backend && ../.venv/bin/python -m pytest -q` | **59 passed**, 337 s, 64% line coverage (87% `scanner/java.py`, 89% `pipeline.py`) |
+| Backend unit + integration | `cd backend && ../.venv/bin/python -m pytest -q` | **59 passed**, 288 s, 64% line coverage (87% `scanner/java.py`, 89% `pipeline.py`) |
 | E2E (real services) | `cd frontend && npx playwright test tests/e2e.spec.ts` | **15 passed**, 1.9 min |
 | Evidence capture | `npx playwright test tests/screenshots.spec.ts` | **12 passed**, 34 screenshots |
 | MCP stdio client | `tests/test_mcp.py` | tools 37, isolation + audit + invalid key |

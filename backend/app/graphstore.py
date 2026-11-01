@@ -211,6 +211,7 @@ class GraphWriter:
             Node.repository_id == self.repository_id,
             Node.status == "ACTIVE",
             Node.type.notin_(["REPOSITORY"]),
+            Node.natural_key.notlike("api:GW:%"),
         )
         if restrict_files is not None:
             stmt = stmt.where(Node.file_path.in_(list(restrict_files)))

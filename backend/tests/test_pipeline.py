@@ -223,8 +223,9 @@ def test_rescan_is_idempotent(db, workspace, scanned_workspace):
     keys_before = set(db.scalars(select(Node.natural_key).where(
         Node.workspace_id == workspace["id"])).all())
     edge_keys_before = set(db.scalars(select(Edge.dedupe_key).where(Edge.workspace_id == workspace["id"])).all())
-    repo = db.get(Repository, scanned_workspace["payment-service"].id)
-    scan_repository(db, repo, trigger="test", mode="full")
+    for repo_name in ("payment-service", "invoice-service", "api-gateway"):
+        repo = db.get(Repository, scanned_workspace[repo_name].id)
+        scan_repository(db, repo, trigger="test", mode="full")
     keys_after = set(db.scalars(select(Node.natural_key).where(
         Node.workspace_id == workspace["id"])).all())
     edge_keys_after = set(db.scalars(select(Edge.dedupe_key).where(Edge.workspace_id == workspace["id"])).all())

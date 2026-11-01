@@ -32,9 +32,12 @@ a human, and marked stale when the source changes.
 
 ## Why ArchGraph
 
-Most tools give you one of these: a code graph, a RAG index, an AI summary, or a
-diagram that is out of date the moment it is generated. ArchGraph is built around
-four rules:
+Most tools give you one of these: a code graph, a vector/RAG index, an AI summary,
+or a diagram that is out of date the moment it is generated. ArchGraph is in the
+first camp — a provenance-carrying graph, **not** a RAG system: there are no
+embeddings and no vector store. Retrieval is SQL over the graph plus full-text
+indexes, and AI context is assembled from that evidence on demand.
+ArchGraph is built around four rules:
 
 1. **Deterministic first.** Scanning, graph construction, impact analysis, source
    navigation and every MCP read tool work with zero AI configuration.
