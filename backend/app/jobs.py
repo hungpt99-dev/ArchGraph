@@ -139,8 +139,14 @@ def worker_loop(poll_interval: float | None = None, once: bool = False) -> None:
     signal.signal(signal.SIGTERM, _sig)
     signal.signal(signal.SIGINT, _sig)
     log.info("worker %s started", worker_id)
+    heartbeat = os.getenv("WORKER_HEARTBEAT", "/tmp/archgraph-worker-heartbeat")
     idle = 0
     while not stop["flag"]:
+        try:
+            with open(heartbeat, "w", encoding="utf-8") as fh:
+                fh.write(str(time.time()))
+        except OSError:
+            pass
         db = SessionLocal()
         try:
             job = claim_next(db, worker_id)
